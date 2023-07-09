@@ -1,4 +1,6 @@
+library(dplyr)
 library(shiny)
+library(ggplot2)
 library(shinycssloaders)
 library(shinyBS) 
 library(shinythemes)
@@ -28,9 +30,7 @@ shinyUI(
                               especially using Katz back-off model."),
                                 br(),
                                 strong("Next word prediction is"),
-                                br(),
-                                br(),
-                                strong(verbatimTextOutput("prediction")),
+                                verbatimTextOutput("prediction") %>% withSpinner(color="#0dc5c1"),
                                 br(),
                                 strong("User Input so far:"),
                                 tags$style(type='text/css', '#text1 {font-weight: bolder;}'), 
@@ -45,8 +45,10 @@ shinyUI(
                    ),
           tabPanel(
             "Help",
-            p("First and foremost using the 1 % of the data given by SwiftKey folks a corpus is genrated. Reason for using just 1% of the data is due to computational burden."),
-            p("Using this corpus, generated 2-grams, 3-grams and 4-grams and these are saved to be used by the app instead of generation during the start up."),
+            p("First and foremost using ", strong("5 %"), " of the data given by SwiftKey folks a corpus is generated. Reason for using just 5% of the data is due to computational burden. Anything more can not be processed in reasonable amount time given the resources of an ordinary machine."),
+            br(),
+            p("Using this corpus, generated 2-grams, 3-grams and 4-grams and these are saved to be used by the app instead of generation during the start up. This N-Gram data itself is almost ", strong("60 MB"), ". Hence it takes a bit to time to load this data during the initial launch of the app and also while searching. Especially 4-Gram data which is enormous."),
+            br(),
             p("The app in turn uses",  strong("Katz Back-Off Language Model"), "to predict the next word based on the user input."),
             br(),
             strong(p("Katz Back-Off Algorithm works as the following")),
@@ -70,12 +72,12 @@ shinyUI(
             ),
             br(),
             p("Source code of this application is available at",
-              a(href = "https://github.com/gudurguy/coursera-developing-data-product-project",
-                "https://github.com/gudurguy/coursera-developing-data-product-project")
+              a(href = "https://github.com/gudurguy/coursera-datascience-capstone-project",
+                "https://github.com/gudurguy/coursera-datascience-capstone-project")
             ),
-            p("Reproducible pitch for this application is available at",
-              a(href = "https://rpubs.com/gudurguy/developing-data-product-reproducible-pitch",
-                "https://rpubs.com/gudurguy/developing-data-product-reproducible-pitch")
+            p("Presentation for this application is available at",
+              a(href = "https://rpubs.com/gudurguy/1061297",
+                "https://rpubs.com/gudurguy/1061297")
             )
           )
 )
