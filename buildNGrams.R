@@ -15,15 +15,15 @@ sampleDataFile <- "sampleData.txt"
 # for memory concerns, if the sample file is already there no need to read the source files again
 if(!file.exists(sampleDataFile)) {
 
-con1 <- file("./inputData/en_US.twitter.txt", open = "rb")
+con1 <- file("../inputData/en_US.twitter.txt", open = "rb")
 twitter <- readLines(con1, skipNul = TRUE, encoding="UTF-8")
 close(con1)
 
-con2 <- file("./inputData/en_US.news.txt", open = "rb")
+con2 <- file("../inputData/en_US.news.txt", open = "rb")
 news <- readLines(con2, skipNul = TRUE, encoding="UTF-8")
 close(con2)
 
-con3 <- file("./inputData/en_US.blogs.txt", open = "rb")
+con3 <- file("../inputData/en_US.blogs.txt", open = "rb")
 blogs <- readLines(con3, skipNul = TRUE, encoding="UTF-8")
 close(con3)
 
