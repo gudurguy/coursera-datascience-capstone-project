@@ -5,4 +5,4 @@ Coursera Data Science Capstone Project
 [https://gudurguy.shinyapps.io/developing-data-products-app/](https://gudurguy.shinyapps.io/datascience-capstone-app/)
 
 # here is the presentation for the project
-[https://rpubs.com/gudurguy/developing-data-product-reproducible-pitch](https://rpubs.com/gudurguy/1061297)https://rpubs.com/gudurguy/1061297
+[https://rpubs.com/gudurguy/1061297](https://rpubs.com/gudurguy/1061297)
